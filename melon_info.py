@@ -1,7 +1,7 @@
 """Print out all the melons in our inventory."""
 
 
-from melons import melon_names, melon_seedlessness, melon_prices
+from melons import melons_info
 
 
 def print_melon(name, seedless, price):
@@ -13,6 +13,10 @@ def print_melon(name, seedless, price):
 
     print(f'{name}s {have_or_have_not} seeds and are ${price:.2f}')
 
+# structure per melon: 'melon_name' = {'price':, 'seedlessness':, 
+#                       'flesh_color':, 'rind_color':, 'avg_weight':}
 
-for i in melon_names:
-    print_melon(melon_names[i], melon_seedlessness[i], melon_prices[i])
+for melon in melons_info:
+    print_melon(melon, 
+        melons_info[melon]['seedlessness'], 
+        melons_info[melon]['price'])
