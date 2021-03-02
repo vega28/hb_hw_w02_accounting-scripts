@@ -1,7 +1,8 @@
 # create a new dict with sub-dicts that contain all the info per melon
-# why?
 #   this will be easier in the future if you want to add more info!
+#       just do melons_info[melon_name][new_attribute] = [new_attribute_value]
 #   also allows you to call melons by name, don't have to know an index number
+
 # structure per melon: 'melon_name' = {'price':, 'seedlessness':, 
 #                       'flesh_color':, 'rind_color':, 'avg_weight':}
 

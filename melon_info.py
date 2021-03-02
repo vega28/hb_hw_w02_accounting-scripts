@@ -4,19 +4,16 @@
 from melons import melons_info
 
 
-def print_melon(name, seedless, price):
+def print_melons(melons):
     """Print each melon with corresponding attribute information."""
 
-    have_or_have_not = 'have'
-    if seedless:
-        have_or_have_not = 'do not have'
+    for melon in melons:
+        print('\n'+melon.upper())
+        for attribute in melons[melon]:
+            if attribute == 'price':
+                print(f'    {attribute}: {melons[melon][attribute]:.2f}')
+            else:
+                print(f'    {attribute}: {melons[melon][attribute]}')
 
-    print(f'{name}s {have_or_have_not} seeds and are ${price:.2f}')
 
-# structure per melon: 'melon_name' = {'price':, 'seedlessness':, 
-#                       'flesh_color':, 'rind_color':, 'avg_weight':}
-
-for melon in melons_info:
-    print_melon(melon, 
-        melons_info[melon]['seedlessness'], 
-        melons_info[melon]['price'])
+print_melons(melons_info)
